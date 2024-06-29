@@ -163,6 +163,9 @@
                                                         </div>
                                                     </div> -->
 
+                                                    <div id="msg_form">            
+                                                    </div>
+
                                                 <div class="col-md-12 text-center" style="padding-top: 4px;">
                                                     <!-- Simple link -->
                                                     <a href="<?= $this->Url->build(['action' => 'recuperarClave']) ?>" style="color:gray">¿Olvidaste tu contraseña?</a>

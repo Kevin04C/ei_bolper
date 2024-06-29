@@ -132,6 +132,14 @@ var Carrito = {
     
 }
 function consultarCarrito(e){
+
+    // validamos el correo si existe y si es valido login-username
+    // if(!validateEmail($('#login-username').val()) ){
+    //     $("#formg_correo").addClass('has-error')
+    //     showMsg( 'Correo electrónico inválido' )
+    //     return
+    // };
+
     if( $("#flag_login").val() == '1' ){
         e.preventDefault();
         if(Carrito.items.length >= 1){
@@ -143,6 +151,20 @@ function consultarCarrito(e){
         $("#form_sesion_web").submit();
     }
 }
+
+// function showMsg( message ){
+//     var msg = `
+//     <div class="message-error" onclick="this.classList.add('hidden');">
+//         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ${message}
+//     </div>
+//     `;
+//     $("#msg_form").html(msg);
+// }
+
+// function validateEmail( email) {
+//     var emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+//     return emailReg.test( email );
+// }
 
 function isLogueado(){
     $.ajax({
