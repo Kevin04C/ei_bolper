@@ -3,7 +3,7 @@
         <img style=" max-height: 70px;margin-left: auto;margin-right: auto" src="cid:logo" alt="logo"  />
     </div>
     <p>
-        ¡Hola!<?=$pedido->cliente_nombre?>, se solicitó un restablecimiento de contraseña para tu cuenta, haz clic en el boton que aparece a continuación para cambiar su contraseña.
+        ¡Hola! <?=$usuario->nom_usuario?>, se solicitó un restablecimiento de contraseña para tu cuenta, haz clic en el boton que aparece a continuación para cambiar su contraseña.
     </p>
     <a class="btn btn-primary" href="<?= $url_cod ?>" role="button" target="_blank">cambiar contraseña</a>
     <p>
@@ -14,7 +14,7 @@
     </p>
      <p>
      Saludos,
-     Data Center Peru Company E.I.R.L.
+     Ei Bolper.
     </p>
 
 </div>

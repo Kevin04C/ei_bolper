@@ -29,9 +29,27 @@ $( document ).ready(function() {
         if($(this).val() == 'DELIVERY'){
             $("[name=metodo_pago]").attr('required', false);
             $("#img_pagar").css('display', 'none');
+            $("#img_yape").css('display', 'none');
+
         }else{
             $("[name=metodo_pago]").attr('required', true);
             $("#img_pagar").css('display', 'block');
+
+            // Validamos si el radio de yape esta seleccionado
+            if($("#radio_yape").prop('checked')) {
+                $("#img_yape").css('display', 'flex');
+            }else{
+                $("#img_yape").css('display', 'none');
+            }
+
+        }
+    })
+
+    $("#radio_yape").on('change',function(){
+        if($(this).prop('checked')){
+            $("#img_yape").css('display', 'flex');
+        }else{
+            $("#img_yape").css('display', 'none');
         }
     })
     

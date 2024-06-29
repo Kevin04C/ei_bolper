@@ -127,6 +127,21 @@
                     <label for="radio_yape" style="font-weight:normal !important">Yape</label>
                 </div>
 
+                <div id="img_yape" 
+                style="
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                margin: 1rem;
+                "
+                >
+                    <img src="<?= $this->Url->build('/img/pagos/yape_qr.jpeg') ?>" alt="yape" style="width: 250px;">
+                    <span>Nr. de celular: +51 935 670 244</span>
+
+                </div>
+
                 <div class="">
                     <input type="checkbox" id="terms" name="tyc" required>
                     <label for="terms" style="font-weight: lighter !important;">
