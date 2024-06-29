@@ -21,7 +21,7 @@ class UsuarioController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb']);
+        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb' , 'isLogueado']);
     }
 
     public function index()
@@ -401,5 +401,17 @@ class UsuarioController extends AppController
         return $this->response->withType('application/json')->withStringBody(json_encode([
             'success' => false, 'message' => 'Ocurrio un error, intente de nuevo', 'data' => null
         ]));
+    }
+
+    public function isLogueado(){
+        // escuchar si es get 
+        // var_dump($this->request);
+        // exit();
+        $isLogueado = $this->usuario_sesion ? true : false;
+        if($this->request->is('get')){
+            return $this->response->withType('application/json')->withStringBody(json_encode([
+                'success' => true, 'message' => 'devolviendo session', 'data' => $isLogueado
+            ]));
+        };
     }
 }
