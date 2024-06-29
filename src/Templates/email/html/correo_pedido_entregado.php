@@ -3,7 +3,7 @@
         <img style=" max-height: 70px;margin-left: auto;margin-right: auto" src="cid:logo" alt="logo"  />
     </div>
     <p>
-        ¡Hola <?=$pedido->cliente_nombre?>! su pedido a sido confirmado como entregado, Gracias por usar Data Center
+        ¡Hola <?=$pedido->cliente_nombre?>! su pedido a sido confirmado como entregado, Gracias por usar Ei Bolper
         <br>
         <br>
         <div>

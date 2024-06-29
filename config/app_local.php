@@ -82,14 +82,22 @@ return [
      * See app.php for more configuration options.
      */
     'EmailTransport' => [
+        // 'default' => [
+        //     'host' => 'hostiara.com',
+        //     'port' => 25,
+        //     'username' => 'testeibolper@hostiara.com',
+        //     'password' => 'EIbolper2024',
+        //     'client' => null,
+        //     'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
+        //     'className' => 'Smtp',
+        // ],
         'default' => [
-            'host' => 'hostiara.com',
-            'port' => 25,
-            'username' => 'testeibolper@hostiara.com',
-            'password' => 'EIbolper2024',
-            'client' => null,
-            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
             'className' => 'Smtp',
+            'host' => 'smtp.gmail.com',
+            'port' => 587,
+            'username' => 'Tiendaeibolper@gmail.com',
+            'password' => 'hsjuqflcuowhkxvh',
+            'tls' => true,
         ],
     ],
 ];

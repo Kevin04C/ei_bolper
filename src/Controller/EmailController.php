@@ -14,23 +14,24 @@ use Cake\Mailer\Mailer;
  */
 class EmailController extends AppController
 {
-    private $from_Email = "testeibolper@hostiara.com";
+    private $from_Email = "Tiendaeibolper@gmail.com";
     private $from_Name = "ei bolper";
     public function initialize(): void
     {
         parent::initialize();
     }
-    public function enviarUsuarioNuevo($usuario = null, $clave = '')
+
+    public function enviarClienteNuevo($usuario = null, $clave = '')
     {
         try {
             $email = new Mailer("default");
             $email->setFrom($this->from_Email, $this->from_Name);
             $email->viewBuilder()
-                ->setTemplate("correo_nuevo_usuario")
+                ->setTemplate("correo_nuevo_cliente")
                 ->setLayout("default");
 
             $email->setTo($usuario->correo_usuario)
-                ->setSubject("Hola {$usuario->nom_usuario}, bienvenido a la familia DATA CENTER")
+                ->setSubject("Hola {$usuario->nom_usuario}, se registró correctamente a Ei Bolper")
                 ->setEmailFormat('html')
                 ->setViewVars([
                     'usuario'     =>  $usuario,
@@ -46,7 +47,44 @@ class EmailController extends AppController
                 //->setAttachments($files)
 
                 ->deliver();
+
+                return $email;
         } catch (\Throwable $th) {
+            //throw $th;
+            // retornarmos el mensaje
+            return $th->getMessage();
+        }
+    }
+    public function enviarUsuarioNuevo($usuario = null, $clave = '')
+    {
+        try {
+            $email = new Mailer("default");
+            $email->setFrom($this->from_Email, $this->from_Name);
+            $email->viewBuilder()
+                ->setTemplate("correo_nuevo_usuario")
+                ->setLayout("default");
+
+            $email->setTo($usuario->correo_usuario)
+                ->setSubject("Hola {$usuario->nom_usuario}, bienvenido a la familia Ei Bolper")
+                ->setEmailFormat('html')
+                ->setViewVars([
+                    'usuario'     =>  $usuario,
+                    'clave'       =>  $clave
+                ])
+                ->setAttachments([
+                    'logo.png' => [
+                        'file' => WWW_ROOT . "public/logo_blanco.png",
+                        'mimetype' => 'image/png',
+                        'contentId' => 'logo'
+                    ]
+                ])
+                //->setAttachments($files)
+                ->deliver();
+
+                return $email;
+        } catch (\Throwable $th) {
+            // retornarmos el mensaje
+            return $th->getMessage();
             //throw $th;
         }
     }
@@ -125,7 +163,7 @@ class EmailController extends AppController
         }
     }
 
-    public function envioCodigoRecuperacion($url_cod = '', $correo_destino = '')
+    public function envioCodigoRecuperacion($url_cod = '', $correo_destino = '' , $usuario)
     {
         try {
 
@@ -142,6 +180,7 @@ class EmailController extends AppController
                     ->setEmailFormat('html')
                     ->setViewVars([
                         'url_cod'     =>  $url_cod,
+                        'usuario'     =>  $usuario,
                     ])
                     ->setAttachments([
                         'logo.png' => [

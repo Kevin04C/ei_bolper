@@ -308,7 +308,7 @@ class UsuarioController extends AppController
             $url = Router::url("/cambiar-clave/" . $uid, true);
 
             $emailCtrl = new EmailController();
-            $emailCtrl->envioCodigoRecuperacion($url, $correo);
+            $emailCtrl->envioCodigoRecuperacion($url, $correo, $usuario);
             return true;
         }
         return null;
@@ -364,6 +364,15 @@ class UsuarioController extends AppController
                     'success' => false, 'message' => 'El DNI ya esta en uso', 'data' => null
                 ]));
             }
+
+            // Correo es obligatorio y con expresion regular 
+            if (($data['correo'] ?? '') == '' || !filter_var($data['correo'], FILTER_VALIDATE_EMAIL)) {
+                return $this->response->withType('application/json')->withStringBody(json_encode([
+                    'success' => false, 'message' => 'El correo no es valido', 'data' => null
+                ]));
+            }
+       
+
             if ((($data['correo'] ?? '') == '') || $this->Usuario->find()->where(['correo_usuario' => $data['correo']])->first()) {
                 return $this->response->withType('application/json')->withStringBody(json_encode([
                     'success' => false, 'message' => 'El correo ya esta en uso', 'data' => null
@@ -378,11 +387,14 @@ class UsuarioController extends AppController
             $usuario->contrasena = $data['contrasena'] ?? '';
             $usuario->direccion = $data['direccion'] ?? '';
 
-            $usuario = $this->Usuario->save($usuario);
+            $usuario_ = $this->Usuario->save($usuario);
 
             if ($this->Usuario->save($usuario)) {
+            // if ($usuario_) {
+                $emailCtrl = new EmailController();
+                $response = $emailCtrl->enviarClienteNuevo($usuario_, $data['contrasena']);
                 return $this->response->withType('application/json')->withStringBody(json_encode([
-                    'success' => true, 'message' => 'Registro exitoso, revise su correo', 'data' => null
+                    'success' => true, 'message' => 'Registro exitoso, revise su correo', 'data' => $response
                 ]));
             }
         }
