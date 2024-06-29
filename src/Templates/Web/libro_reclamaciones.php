@@ -1,7 +1,7 @@
     <div class="contenedor-form">
         <div id="msg_form">
         </div>
-        <?= $this->Form->create($usuario, ['onsubmit' => 'return false']) ?>
+        <?= $this->Form->create($usuario, ['onsubmit' => 'return submitForm(event)']) ?>
         <div class="text-center">
             <h3>Libro de reclamaciones</h3>
         </div>
@@ -73,4 +73,25 @@
             inputTelefono.addEventListener('input', validateNumberInput);
             inputDni.addEventListener('input', validateNumberInput);
         });
+
+        function submitForm(event) {
+            event.preventDefault();
+            var regexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+
+            if(!regexp.test($("#input_email").val())) {
+                showMsg("Correo inválido");
+                return;
+            }
+
+        }
+
+        function showMsg(message) {
+            var msg = `
+    <div class="message-error" onclick="this.classList.add('hidden');">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ${message}
+    </div>
+    `;
+            $("#msg_form").html(msg);
+        }
     </script>
