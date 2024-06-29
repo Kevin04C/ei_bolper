@@ -1,0 +1,21 @@
+.contenedor-form{
+    width: 700px;
+    margin: auto;
+    padding: 3em 1em;
+}
+
+#input_clave::-ms-reveal {
+    display: none
+}
+
+.input-group-addon{
+    background-color: transparent !important;
+}
+
+.message-error{
+    padding: 10px;
+    background-color: #f0aca5;
+    border: 1px solid #f07c6f ;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}

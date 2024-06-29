@@ -1,0 +1,25 @@
+.banner {
+  padding: 2em 3em;
+}
+
+#carousel-example-generic {
+  height: 500px;
+  min-height: 500px;
+}
+.carousel-inner {
+  height: 500px;
+  min-height: 500px;
+}
+.carousel-inner img {
+  height: 500px;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.carousel-control {
+  border-radius: 15px;
+}
+.btn-saber-mas {
+  background: var(--primary);
+  color: #000;
+}
