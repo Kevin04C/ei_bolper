@@ -47,6 +47,7 @@ function submitForm( e ) {
         showMsg( 'Correo electrónico inválido' )
         return false
     }
+
     if($('#input_clave').val() == ''){
         $("#formg_clave").addClass('has-error')
         showMsg( 'Escriba una contraseña' )
@@ -63,6 +64,20 @@ function submitForm( e ) {
         showMsg( 'Las contraseñas no coinciden' )
         return false
     }
+
+    if ($('#input_clave').val() == $('#input_confirmar_clave').val() ){
+        var password = $('#input_clave').val()
+        var errores = validarContraseña(password);  
+
+        if(errores.length > 0) {
+            for (const error of errores) {
+                showMsg(error);
+            }
+            return false;
+        }
+    }
+
+
     var endpoint = `${base}usuario/registro-cliente-web/`
 
     var formData = new FormData();
@@ -109,4 +124,25 @@ function showPwd (me, target) {
         $("#" + target).attr('type', 'password');
         $(me).html('<i class="fa fa-eye"></i>')
     }
+}
+
+function validarContraseña(contraseña) {
+    var errores = [];
+
+    // Verificar longitud mínima
+    if (contraseña.length < 8) {
+        errores.push("La contraseña debe tener al menos 8 caracteres.");
+    }
+
+    // Verificar al menos un número
+    if (!/\d/.test(contraseña)) {
+        errores.push("La contraseña debe contener al menos un número.");
+    }
+
+    // Verificar al menos una letra mayúscula
+    if (!/[A-Z]/.test(contraseña)) {
+        errores.push("La contraseña debe contener al menos una letra mayúscula.");
+    }
+
+    return errores;
 }
