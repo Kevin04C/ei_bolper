@@ -103,7 +103,7 @@
                     <select class="input" name="metodo_entrega" placeholder="Metodo de entrega" required>
                         <option value="">-Metodo de entrega-</option>
                         <option value="LOCAL">Recojo en Local</option>
-                        <option value="DELIVERY">Pago contra entrega </option>
+                        <option value="DELIVERY">Delivery</option>
                     </select>
                 </div>
                 <div class="order-notes">
