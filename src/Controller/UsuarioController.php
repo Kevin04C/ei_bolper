@@ -27,7 +27,7 @@ class UsuarioController extends AppController
     public function index()
     {
         $this->verificarAdm();
-        $usuario = $this->paginate($this->Usuario->find()->where(['or' => [['tipo' => 'ADM'], ['tipo' => 'PROVEEDOR']]]), ['limit' => '10']);
+        $usuario = $this->paginate($this->Usuario->find()->where(['or' => [['tipo' => 'ADM']]]), ['limit' => '10']);
         $top_links = [
             'title' => "Usuarios",
             'links' =>  [

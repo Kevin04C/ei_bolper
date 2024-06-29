@@ -37621,3 +37621,569 @@ Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http
 Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
 [main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
 
+2024-06-29 16:24:03 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /logout
+Referer URL: http://localhost:8765/mi-cuenta
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:04 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /
+Referer URL: http://localhost:8765/mi-cuenta
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:04 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/inject-iframe.js?1700772866
+Referer URL: http://localhost:8765/
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:04 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /css/bootstrap.min.css.map
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:04 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /panel?redirect=%2Fcss%2Fbootstrap.min.css.map
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:04 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /css/ajax-loader.gif
+Referer URL: http://localhost:8765/css/slick-theme.css
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Referer URL: http://localhost:8765/
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /panel?redirect=%2Fcss%2Fajax-loader.gif
+Referer URL: http://localhost:8765/css/slick-theme.css
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/css/reset.css
+Referer URL: http://localhost:8765/debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/css/style.css
+Referer URL: http://localhost:8765/debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/img/cake.icon.png
+Referer URL: http://localhost:8765/debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/jquery.js
+Referer URL: http://localhost:8765/debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/main.js
+Referer URL: http://localhost:8765/debug-kit/toolbar/447adc8d-b66b-4e71-89d0-3a03d3f3c867
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Start.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Keyboard.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/CachePanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/HistoryPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/RoutesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/VariablesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:05 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/PackagesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:06 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/MailPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:06 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Toolbar.js
+Referer URL: http://localhost:8765/debug_kit/js/modules/Start.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:06 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Helper.js
+Referer URL: http://localhost:8765/debug_kit/js/modules/Start.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:06 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /admin
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:06 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /panel?redirect=%2Fadmin
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/inject-iframe.js?1700772866
+Referer URL: http://localhost:8765/panel?redirect=%2Fadmin
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /assets/bootstrap/js/bootstrap.bundle.min.js.map
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Referer URL: http://localhost:8765/panel?redirect=%2Fadmin
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /panel?redirect=%2Fassets%2Fbootstrap%2Fjs%2Fbootstrap.bundle.min.js.map
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/css/reset.css
+Referer URL: http://localhost:8765/debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/css/style.css
+Referer URL: http://localhost:8765/debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/img/cake.icon.png
+Referer URL: http://localhost:8765/debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/jquery.js
+Referer URL: http://localhost:8765/debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/main.js
+Referer URL: http://localhost:8765/debug-kit/toolbar/be10c0b9-293b-48fc-8887-78e7e5321f5f
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Start.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Keyboard.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:07 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/CachePanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/HistoryPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/RoutesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/VariablesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/PackagesPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Panels/MailPanel.js
+Referer URL: http://localhost:8765/debug_kit/js/main.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Toolbar.js
+Referer URL: http://localhost:8765/debug_kit/js/modules/Start.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:24:08 notice: Calling ReflectionProperty::setValue() with a single argument is deprecated
+Request URL: /debug_kit/js/modules/Helper.js
+Referer URL: http://localhost:8765/debug_kit/js/modules/Start.js
+Trace:
+ReflectionProperty::setValue() [internal], line ??
+DebugKit\Panel\MailPanel::initialize() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Panel\MailPanel.php, line 70
+DebugKit\ToolbarService::initializePanels() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\ToolbarService.php, line 224
+DebugKit\Middleware\DebugKitMiddleware::process() C:\laragon\www\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 58
+Cake\Http\Runner::handle() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
+

@@ -24,9 +24,6 @@
                     <?= $this->Form->control('correo', [ 'label' => 'Correo', 'class' => 'form-control form-control-sm']); ?>
                 </div>
             </div>
-            <label>
-               ** Los Datos para el usuario se editan desde el listado de usuarios.
-            </label>
         </fieldset>
         <?= $this->Form->button( '<i class="fa fa-save"></i> Guardar', ['class' => 'btn btn-primary btn-sm' , 'escapeTitle' => false ]) ?>
         <?= $this->Form->end() ?>

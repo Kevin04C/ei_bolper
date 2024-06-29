@@ -23,6 +23,7 @@ class ProveedoresController extends AppController
         $this->verificarAdm();
         $proveedores = $this->paginate($this->Proveedores ,['limit' => '10', 'contain' => ['Usuario']]);
 
+
         $top_links = [
             'title' => 'Proveedores',
             'links' => [
@@ -122,20 +123,37 @@ class ProveedoresController extends AppController
 
     public function edit($id = null)
     {
+        $regex_correo = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+
         $this->verificarAdm();
 
         $proveedor = $this->Proveedores->get($id, [
             'contain' => [],
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $data = $this->request->getData();
-            $proveedor = $this->Proveedores->patchEntity($proveedor, $this->request->getData());
-            if ($this->Proveedores->save($proveedor)) {
-                $this->Flash->success(__('El proveedor a sido actualizado.'));
 
-                return $this->redirect(['action' => 'index']);
+            if(strlen($data["ruc"]) != 11) {
+                $this->Flash->error(__('El RUC debe tener 11 dígitos.'));
             }
-            $this->Flash->error(__('Ocurrio un error, intente de nuevo.'));
+            elseif(strlen($data["telefono"]) != 9) {
+                $this->Flash->error(__('El teléfono debe tener 9 dígitos.'));
+            }
+            elseif(!preg_match($regex_correo, $data["correo"])) {
+                $this->Flash->error(__('El correo ingresado no es un correo válido.'));
+            }
+            else {
+                $proveedor = $this->Proveedores->patchEntity($proveedor, $this->request->getData());
+                if ($this->Proveedores->save($proveedor)) {
+                    $this->Flash->success(__('El proveedor a sido actualizado.'));
+    
+                    return $this->redirect(['action' => 'index']);
+                }
+                $this->Flash->error(__('Ocurrio un error, intente de nuevo.'));
+
+            }
+
         }
 
         $this->set(compact('proveedor'));

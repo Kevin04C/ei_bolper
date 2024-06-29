@@ -7,7 +7,7 @@
             </a>
         </li>
         <li>
-            <a href="<?= $this->Url->Build(['controller' => 'Categoria']) ?>">
+            <a href="<?= $this->Url->Build(['controller' => 'Categoria', "action" => "index"]) ?>">
                 <i class="fa fa-puzzle-piece fa-fw"></i> Categorias
             </a>
         </li>
