@@ -315,4 +315,37 @@ class WebController extends AppController
         $this->set("usuario", $usuario);
         $this->set("view_title", 'Crear nueva contraseña');
     }
+
+    public function miCuenta()
+    {   
+        if($this->request->is(["patch", "post"])) {
+            var_dump($this->request);
+            exit();
+        }
+        
+
+        if (!$this->Authentication->getResult()->isValid()) {
+            return $this->redirect(['controller' => 'web', 'action' => 'loginWeb']);
+        }
+
+        $usuario = $this->fetchTable('usuario')->find()->where(['id_usuario' => $this->usuario_sesion->id_usuario])->first();
+        // $pedidos = $this->fetchTable('Pedido')->find()->where(['usuario_id' => $this->usuario_sesion->id_usuario, 'estado_orden != ' => 'NUEVO'])->limit(20);
+
+        $this->set("usuario", $usuario);
+        $this->set("view_title", 'Mi Cuenta');
+
+    }
+
+    public function editarCuenta() {
+        if($this->request->is(["patch", "post", "put"])) {
+            $data = $this->request->getData();
+            $usuario = $this->fetchTable('usuario')->find()->where(['id_usuario' => $this->usuario_sesion->id_usuario])->first();
+            $usuario = $this->fetchTable('usuario')->patchEntity($usuario, $data);
+            if($this->fetchTable('usuario')->save($usuario)) {
+                $this->Flash->success("Datos actualizados correctamente.");
+                return $this->redirect(['controller' => 'web', 'action' => 'miCuenta']);
+            }
+            $this->Flash->error("Error al actualizar los datos.");
+        }
+    }
 }

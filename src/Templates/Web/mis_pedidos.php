@@ -9,7 +9,7 @@
                 <thead>
                     <tr>
                         <th> Codigo </th>
-                        <th> Fecha </th>
+                        <th> Fecha </th>    
                         <th> Estado </th>
                         <th> Total </th>
                         <th style="width:30px"> Acc. </th>

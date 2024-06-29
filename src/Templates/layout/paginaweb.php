@@ -131,6 +131,7 @@
                                                 Nombres: <?= $usuario_sesion ? ($usuario_sesion->nom_usuario == '' ? 'Usuario' : $usuario_sesion->nom_usuario) : 'Usuario' ?>
                                             </div>
                                             <div class="cart-btns">
+                                                <a class="cart-pedidos" href="<?= $this->Url->build(['action' => 'mi-cuenta']) ?>">Mi Cuenta</a>
                                                 <a class="cart-pedidos" href="<?= $this->Url->build(['action' => 'mis-pedidos']) ?>">Mis pedidos</a>
                                                 <button class="button-subm"> Salir <i class="fa fa-arrow-circle-right"></i></button>
                                             </div>

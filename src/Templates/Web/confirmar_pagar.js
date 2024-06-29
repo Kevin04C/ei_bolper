@@ -101,15 +101,15 @@ function confirmarPedido(e) {
     var correo = $("#input_correo_usuario").val();
     var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (regex.test(correo)) {
-        console.log("El correo es válido");
+    if (regex.test(correo)) {   
+        alert("El correo es válido");
         // $("#mensaje_validacion").text("El correo es válido").css("color", "green");
     } else {
-        console.log("El correo no es válido");  
+        alert("El correo no es válido");  
         // $("#mensaje_validacion").text("El correo no es válido").css("color", "red");
     }
 
-    return;
+    // return;
 
     $("#btn_submit").attr('disabled', true)
     $("#btn_submit").css('background-color', 'grey')

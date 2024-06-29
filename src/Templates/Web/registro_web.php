@@ -5,6 +5,7 @@
         <div class="text-center">
             <h3>Datos del Cliente</h3>
         </div>
+
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group msg-form-border">

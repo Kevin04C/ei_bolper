@@ -4,7 +4,7 @@
         <?= $this->Form->control('dni', ['class' => 'form-control']); ?>
     </div>
     <div class="col-12 col-md-6 py-2">
-        <?= $this->Form->control('nom_usuario', ['class' => 'form-control']); ?>
+        <?= $this->ForFm->control('nom_usuario', ['class' => 'form-control']); ?>
     </div>
     <div class="col-12 col-md-6 py-2">
         <label for="">Contraseña</label>

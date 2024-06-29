@@ -9,12 +9,12 @@ use Cake\Routing\Router;
 /**
  * Usuario Controller
  *
- * @property \App\Model\Table\UsuarioTable $Usuario
+ * @property \App\Model\Table\UsuarioTable 
  * @method \App\Model\Entity\Usuario[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class UsuarioController extends AppController
 {
-    public function initialize(): void
+    public function initialize(): void  
     {
         parent::initialize();
     }
@@ -144,7 +144,7 @@ class UsuarioController extends AppController
     public function clientes()
     {
         $this->verificarAdm();
-        $clientes = $this->Usuario->find()->where(['tipo !=' => 'ADM']);
+        $clientes = $this->Usuario->find()->where(['tipo =' => 'CLIENTE']);
         $opt_nombres = $this->request->getQuery('opt_nombres', '');
         $opt_tipo = $this->request->getQuery('opt_tipo', '');
         if (isset($opt_nombres) && $opt_nombres != '') {

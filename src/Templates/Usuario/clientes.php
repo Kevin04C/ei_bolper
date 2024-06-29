@@ -4,7 +4,8 @@
             <?= $this->Form->control('opt_nombres', ['label' => 'Nombres', 'class' => 'form-control form-control-sm' ,'value' => $opt_nombres ?? ''] ) ?>
         </div>
         <div class="col-md">
-            <?= $this->Form->control('opt_tipo' , ['label' => 'Tipo', 'class' => 'form-select form-select-sm', 'options' => ['DESCONOCIDO' => 'DESCONOCIDO', 'CLIENTE' => 'CLIENTE'] , 'empty' => '-Seleccione-' ,'value' => $opt_tipo ?? ''] ) ?>
+                <!-- ENVOLVERLO DENTRO DE UN <? ?>  PARA QUE FUNCIONE DE NUEVO-->
+                 <!-- $this->Form->control('opt_tipo' , ['label' => 'Tipo', 'class' => 'form-select form-select-sm', 'options' => ['DESCONOCIDO' => 'DESCONOCIDO', 'CLIENTE' => 'CLIENTE'] , 'empty' => '-Seleccione-' ,'value' => $opt_tipo ?? ''] )  -->
         </div>
         <div class="col-md-3" style="max-width:240px">
             <br>
