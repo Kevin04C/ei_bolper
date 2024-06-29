@@ -8,7 +8,7 @@ use Cake\Http\Cookie\CookieCollection;
 use Cake\Http\Cookie\Cookie;
 class AppController extends Controller
 {
-    protected $usuario_sesion = null;
+    public $usuario_sesion = null;
     protected $usuario_cookie = null;
     protected $cookies = null;
     protected $oferta_activa = false;

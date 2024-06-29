@@ -37621,3 +37621,65 @@ Cake\Http\Runner::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http
 Cake\Http\Server::run() C:\laragon\www\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
 [main] C:\laragon\www\ei_bolper\webroot\index.php, line 40
 
+2024-06-29 16:52:03 notice: Optional parameter $url_cod declared before required parameter $usuario is implicitly treated as a required parameter
+Request URL: /panel/usuario/registro-cliente-web/
+Referer URL: http://localhost:8765/registro-web
+Trace:
+include C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 571
+Composer\Autoload\includeFile C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 571
+Composer\Autoload\ClassLoader::loadClass() C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 428
+App\Controller\UsuarioController::registroClienteWeb() C:\xampp\htdocs\ei_bolper\src\Controller\UsuarioController.php, line 394
+Cake\Controller\Controller::invokeAction() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\Controller.php, line 548
+Cake\Controller\ControllerFactory::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php, line 139
+Cake\Controller\ControllerFactory::invoke() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php, line 114
+Cake\Http\BaseApplication::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\BaseApplication.php, line 320
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 86
+Cake\Http\Middleware\CsrfProtectionMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php, line 174
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Authentication\Middleware\AuthenticationMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\authentication\src\Middleware\AuthenticationMiddleware.php, line 124
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Middleware\BodyParserMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php, line 162
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Routing\Middleware\RoutingMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php, line 187
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Routing\Middleware\AssetMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php, line 68
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Error\Middleware\ErrorHandlerMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php, line 131
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+DebugKit\Middleware\DebugKitMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 60
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\xampp\htdocs\ei_bolper\webroot\index.php, line 40
+
+2024-06-29 16:52:03 notice: Optional parameter $correo_destino declared before required parameter $usuario is implicitly treated as a required parameter
+Request URL: /panel/usuario/registro-cliente-web/
+Referer URL: http://localhost:8765/registro-web
+Trace:
+include C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 571
+Composer\Autoload\includeFile C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 571
+Composer\Autoload\ClassLoader::loadClass() C:\xampp\htdocs\ei_bolper\vendor\composer\ClassLoader.php, line 428
+App\Controller\UsuarioController::registroClienteWeb() C:\xampp\htdocs\ei_bolper\src\Controller\UsuarioController.php, line 394
+Cake\Controller\Controller::invokeAction() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\Controller.php, line 548
+Cake\Controller\ControllerFactory::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php, line 139
+Cake\Controller\ControllerFactory::invoke() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php, line 114
+Cake\Http\BaseApplication::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\BaseApplication.php, line 320
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 86
+Cake\Http\Middleware\CsrfProtectionMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php, line 174
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Authentication\Middleware\AuthenticationMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\authentication\src\Middleware\AuthenticationMiddleware.php, line 124
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Middleware\BodyParserMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php, line 162
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Routing\Middleware\RoutingMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php, line 187
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Routing\Middleware\AssetMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php, line 68
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Error\Middleware\ErrorHandlerMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php, line 131
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+DebugKit\Middleware\DebugKitMiddleware::process() C:\xampp\htdocs\ei_bolper\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 60
+Cake\Http\Runner::handle() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 82
+Cake\Http\Runner::run() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Runner.php, line 67
+Cake\Http\Server::run() C:\xampp\htdocs\ei_bolper\vendor\cakephp\cakephp\src\Http\Server.php, line 90
+[main] C:\xampp\htdocs\ei_bolper\webroot\index.php, line 40
+

@@ -1,8 +1,16 @@
 
 $( document ).ready(function() {
+    isLogueado();
 });
 
+
+$("#carrito_id").on('click', function(){
+    isLogueado();
+})
+
 var notificador = new Notification(document.querySelector('.notification'));
+var estaLogueado = false;
+// console.log(estaLogueado);
 var Carrito = {
     pedido: null,
     items: [],
@@ -98,6 +106,7 @@ var Carrito = {
                 `);
             $("#carrito_id #carrito_cantidad").html('0');
         }else{
+            
             $("#carrito_lista_id").html(`
                 <div class='cart-list'>
                     ${html} 
@@ -106,15 +115,21 @@ var Carrito = {
                     <small> ${Number.parseInt(cantidad_prod)} items seleccionados </small>
                     <h5> S/. ${Number.parseFloat(total).toFixed(2)}</h5>
                 </div>
-                <div class="cart-btns">
-                    <a href="${base_root}confirmar-pagar"> Pagar <i class="fa fa-arrow-circle-right"></i></a>
+                <div id="sesion_button" class="cart-btns">
+                 
+                  
+                  
+               
                 </div>
             `);
+            // <a href="${base_root}confirmar-pagar"> Pagar <i class="fa fa-arrow-circle-right"></i></a>
         }
     },
     actualizarInputPedidoId(id_pedido){
         // $("[name=pedido_cookie_id]").val(id_pedido)
     }
+
+    
 }
 function consultarCarrito(e){
     if( $("#flag_login").val() == '1' ){
@@ -127,4 +142,30 @@ function consultarCarrito(e){
         $("#flag_login").val("0");
         $("#form_sesion_web").submit();
     }
+}
+
+function isLogueado(){
+    $.ajax({
+        headers: { 'X-CSRF-Token': csrfToken },
+        url: base + "usuario/is-logueado",
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (r) { 
+            estaLogueado = r.data;
+            if(estaLogueado){
+                $("#sesion_button").html(`
+                    <a href="${base_root}confirmar-pagar"> Pagar <i class="fa fa-arrow-circle-right"></i></a>
+                `);
+            }else{
+                $("#sesion_button").html(` <a style=" background-color: #35453d; !important" > Debe iniciar sesion para pagar <i class="fa fa-arrow-circle-right"></i></a>`);
+            }
+
+
+
+           
+        },error: function (xhr, ajaxOptions, thrownError) {
+            // alert(xhr.status);
+            // alert(thrownError);
+        }
+    });
 }

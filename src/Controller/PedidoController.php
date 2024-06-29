@@ -15,8 +15,7 @@ class PedidoController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['agregarProductoPedido', 'eliminarRegistroPedido', 'confirmarPedido', 'pagarPedidoFinal'
-    ]);
+        $this->Authentication->allowUnauthenticated(['agregarProductoPedido', 'eliminarRegistroPedido', 'confirmarPedido', 'pagarPedidoFinal']);
     }
     public function beforeRender(EventInterface $event)
     {
