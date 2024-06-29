@@ -19,9 +19,13 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
+        <div class=" col-md-6" >
             <h2>VENTAS TOTALES: S/.<?php echo h($totalVentas); ?></h2>
+            <buttona id="imprimir_button" class="btn btn-secondary btn-sm">Imprimir Grafico</button>
         </div>
+
+
+    
     </div>
     <br>
     <div class="row">
@@ -80,5 +84,9 @@
                 }
             }
         });
+    });
+
+    document.getElementById('imprimir_button').addEventListener('click', function() {
+        window.print();
     });
 </script>
