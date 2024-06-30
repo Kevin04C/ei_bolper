@@ -27,7 +27,7 @@ $( document ).ready(function() {
     })
     $("[name=metodo_entrega]").on('change', function(){
         if($(this).val() == 'DELIVERY'){
-            $("#notas_adicionales").css('display', 'none');
+            $("#notas_adicionales").css('display', 'flex');
             // $("[name=metodo_pago]").attr('required', false);
             // $("#img_pagar").css('display', 'none');
             // $("#img_yape").css('display', 'none');
@@ -35,7 +35,7 @@ $( document ).ready(function() {
         }else{
             $("[name=metodo_pago]").attr('required', true);
             $("#img_pagar").css('display', 'block');
-            $("#notas_adicionales").css('display', 'flex');
+            $("#notas_adicionales").css('display', 'none');
             // Validamos si el radio de yape esta seleccionado
             // if($("#radio_yape").prop('checked')) {
             //     $("#img_yape").css('display', 'flex');
