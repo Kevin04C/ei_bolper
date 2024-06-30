@@ -163,8 +163,8 @@
                                                         </div>
                                                     </div> -->
 
-                                                    <div id="msg_form">            
-                                                    </div>
+                                                    <!-- <div id="msg_form">            
+                                                    </div> -->
 
                                                 <div class="col-md-12 text-center" style="padding-top: 4px;">
                                                     <!-- Simple link -->
