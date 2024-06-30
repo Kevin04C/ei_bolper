@@ -3,9 +3,10 @@
         <img style=" max-height: 70px;margin-left: auto;margin-right: auto" src="cid:logo" alt="logo"  />
     </div>
     <p>
-        La persona  <?=$data->nombre?>, con dni <?=$data->dni?> envio un mensaje a través del formulario de libro de reclamaciones de la página web.
+        
+        La persona  <?=$data['nombre']?>, con dni <?=$data['dni']?> envio un mensaje a través del formulario de libro de reclamaciones de la página web.
     </p>
-        <?=$data->descripcion?>
+        <?=$data->['descripcion']?>
     </p>
 
 </div>

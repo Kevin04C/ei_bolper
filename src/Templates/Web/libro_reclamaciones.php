@@ -86,7 +86,7 @@
 
             $("#btn_submit").attr('disabled', true)
             $("#btn_submit").css('background-color', 'grey')
-            $("#btn_submit").html(`Guardando pago <i class="fa fa-spinner fa-spin"></i>`)
+            $("#btn_submit").html(`Guardando reclamo <i class="fa fa-spinner fa-spin"></i>`)
 
             var form = document.getElementById("form_libro_reclamaciones");
             console.log(form);
@@ -103,8 +103,8 @@
             contentType: false,
             success: function (r) {
                 if (r.success) {
-                    alert(r.mensaje)
-                    location.reload();
+                    alert(r.message)
+                    // location.reload();
                 }else{
                     alert('Ocurrio un error con su pedido.')
                 }

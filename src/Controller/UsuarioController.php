@@ -24,7 +24,7 @@ class UsuarioController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado', 'obtenerInformacionGrafico']);
+        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado', 'obtenerInformacionGrafico' , 'libroReclamaciones']);
     }
 
     public function index()
