@@ -138,16 +138,81 @@
             type: 'GET',
             dataType: 'JSON',
             success: function (r) {
-                console.log(r)
+                var list = r.data;
+
+                var labels = [];
+                var data = [];
+                var label = "";
+                
+                for (var i = 0; i < list.length; i++) {
+                    labels.push(list[i].nombre);
+                };
+
+                for (var i = 0; i < list.length; i++) {
+                    data.push(list[i].total);
+                };
+
+                if(r.tipo == 1){
+                    document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MÁS VENDIDOS';
+                    label = 'Total Vendido';
+                }else if(r.tipo == 2){
+                    document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MENOS VENDIDOS';
+                    label = 'Total Vendido';
+                }else if(r.tipo == 3){
+                    document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS CON 0 STOCK';
+                    label = 'Stock';
+                }else if(r.tipo == 4){
+                    document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS DÍAS CON MENOS VENTAS';
+                    label = 'Total Vendido';
+                }else if(r.tipo == 5){
+                    document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS CLIENTES CON MÁS COMPRAS';
+                    label = 'Total Comprado';
+                }
+
+                var ctx = document.getElementById('productosMasVendidosChart').getContext('2d');
+                var productosMasVendidosChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: label,
+                            data: data ,
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(75, 192, 192, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1,
+                                    callback: function(value) {
+                                        if (Number.isInteger(value)) {
+                                            return value;
+                                        }
+                                    },
+                                }
+                            }
+                        }
+                    }
+                });
+
                 
             },error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }
         });
-
-
-
 
     });
 
@@ -157,6 +222,9 @@
         document.getElementById('opt_fech_ini').value = new Date().toISOString().split('T')[0].split('-')[0] + '-' + new Date().toISOString().split('T')[0].split('-')[1] + '-01';
         //  hoy 
         document.getElementById('opt_fech_fin').value = new Date().toISOString().split('T')[0];
+
+        // grafico 1 por defecto
+        document.getElementById('list_opciones').value = 1;
     };
 
 
