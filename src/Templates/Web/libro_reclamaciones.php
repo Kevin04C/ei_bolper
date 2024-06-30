@@ -1,7 +1,7 @@
     <div class="contenedor-form">
         <div id="msg_form">
         </div>
-        <?= $this->Form->create($usuario, ['onsubmit' => 'return submitForm(event)']) ?>
+        <?= $this->Form->create($usuario, ['onsubmit' => 'return submitForm(event)', 'id' => "form_libro_reclamaciones"]) ?>
         <div class="text-center">
             <h3>Libro de reclamaciones</h3>
         </div>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <?= $this->Form->button('<i class="fa fa-upload"></i> Enviar', ['class' => 'btn btn-primary', 'style' => 'width:100%', 'escapeTitle' => false]) ?>
+                <?= $this->Form->button('<i class="fa fa-upload"></i> Enviar', ['class' => 'btn btn-primary', 'style' => 'width:100%', 'escapeTitle' => false, 'id' => "btn_submit"]) ?>
             </div>
 
         </div>
@@ -83,6 +83,40 @@
                 showMsg("Correo inválido");
                 return;
             }
+
+            $("#btn_submit").attr('disabled', true)
+            $("#btn_submit").css('background-color', 'grey')
+            $("#btn_submit").html(`Guardando pago <i class="fa fa-spinner fa-spin"></i>`)
+
+            var form = document.getElementById("form_libro_reclamaciones");
+            console.log(form);
+            var formData = new FormData(form);
+
+            $.ajax({
+            headers: { 'X-CSRF-Token': csrfToken },
+            url: base + "pedido/pagar-pedido-final",
+            data: formData,
+            type: 'POST',
+            dataType: 'JSON',
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function (r) {
+                console.log(r)
+                if (r.success) {
+                    // window.location.replace( base + "web/pedido-confirmado/" + pedido_id )
+                }else{
+                    alert('Ocurrio un error con su pedido.')
+                }
+            },error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }, complete: function () {
+                $("#btn_submit").attr('disabled', false)
+                $("#btn_submit").css('background-color', '#D10024')
+                $("#btn_submit").html(`Guardar Pago <i class="fa fa-arrow-circle-right"></i>`)
+            }, 
+         });
 
         }
 
