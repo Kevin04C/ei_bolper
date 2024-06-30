@@ -57,8 +57,6 @@ $( document ).ready(function() {
 });
 
 
-
-
 function generarListaItems(){
     var total = 0;
     var cantidad_prod = 0;
@@ -110,24 +108,27 @@ function generarListaItems(){
         $("#btn_submit").css('background-color', 'grey')
     }
 }
+
 function eliminarItem(id) {
     Carrito.removerProducto(id, generarListaItems);
 }
+
 function confirmarPedido(e) {
     e.preventDefault();
 
-    var correo = $("#input_correo_usuario").val();
-    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // Si cambio la direccion de envio validamos 
+    if($("#shiping-address").prop('checked')){
 
-    if (regex.test(correo)) {   
-        alert("El correo es válido");
-        // $("#mensaje_validacion").text("El correo es válido").css("color", "green");
-    } else {
-        alert("El correo no es válido");  
-        // $("#mensaje_validacion").text("El correo no es válido").css("color", "red");
-    }
+        var correo = $("[name=nom_usuario]").val();
+        var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    // return;
+        if (!regex.test(correo)) {   
+            showMsg('Correo electrónico inválido');
+            return;
+        };
+
+    };
+
 
     $("#btn_submit").attr('disabled', true)
     $("#btn_submit").css('background-color', 'grey')
@@ -186,4 +187,14 @@ function confirmarPedido(e) {
             $("#btn_submit").html(`Confirmar Pedido <i class="fa fa-arrow-circle-right"></i>`)
         }, 
     });
+}
+
+function showMsg( message ){
+    window.scrollTo(0, 0);
+    var msg = `
+    <div class="message-error" onclick="this.classList.add('hidden');">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ${message}
+    </div>
+    `;
+    $("#msg_form").html(msg);
 }

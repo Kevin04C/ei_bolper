@@ -5,6 +5,9 @@
         <!-- row -->
         <div class="row">
 
+        <div id="msg_form">            
+        </div>
+
             <div class="col-md-7">
                 <?php if (!$usuario_sesion) : ?>
                     <!-- Billing Details -->
