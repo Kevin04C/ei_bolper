@@ -113,7 +113,8 @@
                 alert(thrownError);
             }, complete: function () {
                 $("#btn_submit").attr('disabled', false)
-                $("#btn_submit").html(`<button> <i class="fa fa-upload"></i> Enviar</button>`)
+                $("#btn_submit").css('background-color', '')
+                $("#btn_submit").html(` <i class="fa fa-upload"></i> Enviar`)
             }, 
          });
 
