@@ -179,7 +179,7 @@ function isLogueado(){
                     <a href="${base_root}confirmar-pagar"> Pagar <i class="fa fa-arrow-circle-right"></i></a>
                 `);
             }else{
-                $("#sesion_button").html(` <a style=" background-color: #35453d; !important" > Debe iniciar sesion para pagar <i class="fa fa-arrow-circle-right"></i></a>`);
+                $("#sesion_button").html(` <a style=" background-color: #35453d; !important" > Debe iniciar sesion para pagar </a>`);
             }
 
 

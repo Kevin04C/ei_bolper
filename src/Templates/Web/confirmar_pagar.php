@@ -110,7 +110,7 @@
                     </select>
                 </div>
                 <div class="order-notes">
-                    <textarea class="input" name="notas_adicionales" placeholder="Indique específicamente dónde será enviado y proporcione los datos de la factura o boleta"></textarea>
+                    <textarea id="notas_adicionales" class="input" name="notas_adicionales" placeholder="Indique específicamente dónde será enviado y proporcione los datos de la factura o boleta"></textarea>
                 </div>
                 <!-- /Order notes -->
             </div>
@@ -132,7 +132,7 @@
 
                 <div id="img_yape" 
                 style="
-                display: none;
+                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;

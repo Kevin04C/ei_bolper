@@ -13,6 +13,8 @@ function submitPagarPedido(e) {
     formData.append('id_pedido', pedido_id );
     formData.append('metodo_pago', metodo_pago );
 
+    console.log(formData);
+
     $.ajax({
         headers: { 'X-CSRF-Token': csrfToken },
         url: base + "pedido/pagar-pedido-final",
