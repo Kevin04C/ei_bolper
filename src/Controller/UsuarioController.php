@@ -434,7 +434,7 @@ class UsuarioController extends AppController
         $query->select([
             'usuario_id',
             'nombre' => 'Usuario.nom_usuario',
-            'total' => $query->func()->count('*')
+            'cantidad' => $query->func()->count('*')
         ])
             ->innerJoinWith('Usuario')
             ->where([
@@ -462,7 +462,7 @@ class UsuarioController extends AppController
         // Crear la consulta para obtener los días con menos ventas
         $query = $pedidoTable->find();
         $query->select([
-            'fecha' => $query->func()->date(['fecha_orden' => 'literal']),
+            'nombre' => $query->func()->date(['fecha_orden' => 'literal']),
             'cantidad' => $query->func()->count('*')
         ])
             ->where([
@@ -492,8 +492,8 @@ class UsuarioController extends AppController
         $query = $pedidoTable->find();
         $query->select([
             'producto_id' => 'Producto.id',
-            'nom_producto' => 'Producto.nom_producto',
-            'total' => $query->func()->sum('Pedido.cantidad')
+            'nombre' => 'Producto.nom_producto',
+            'cantidad' => $query->func()->sum('Pedido.cantidad')
         ])
             ->innerJoinWith('DetallePedido.Producto')
             ->where([
@@ -515,21 +515,23 @@ class UsuarioController extends AppController
 
     public function productosSinStock()
     {
-        // Obtener instancia de ProductoTable
-        $productoTable = TableRegistry::getTableLocator()->get('Producto');
+       // Obtener instancia de ProductoTable
+       $productoTable = TableRegistry::getTableLocator()->get('Producto');
 
-        // Crear la consulta para obtener los productos con stock igual a 0
-        $query = $productoTable->find();
-        $query->where([
-            'stock' => 0
-        ])
-            ->limit(3);
+       // Crear la consulta para obtener los productos con stock igual a 0
+       $query = $productoTable->find();
+       $query->select([
+               'nombre' => 'nom_producto',
+               'cantidad' => 'stock'
+           ])
+           ->where(['stock' => 0])
+           ->limit(3);
 
-        // Ejecutar la consulta y obtener los resultados
-        $resultados = $query->toArray();
+       // Ejecutar la consulta y obtener los resultados
+       $resultados = $query->toArray();
 
-        // Retornar los resultados
-        return $resultados;
+       // Retornar los resultados
+       return $resultados;
     }
 
     public function obtenerInformacionGrafico() {
@@ -571,8 +573,8 @@ class UsuarioController extends AppController
         $query = $detallePedidoTable->find();
         $query->select([
             'producto_id' => 'DetallePedido.producto_id',
-            'producto_nombre' => 'DetallePedido.producto_nombre',
-            'total_vendido' => $query->func()->sum('DetallePedido.pedido_cantidad')
+            'nombre' => 'DetallePedido.producto_nombre',
+            'cantidad' => $query->func()->sum('DetallePedido.pedido_cantidad')
         ])
             ->join([
                 'table' => 'pedido',
