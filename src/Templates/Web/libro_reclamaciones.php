@@ -104,7 +104,7 @@
             success: function (r) {
                 if (r.success) {
                     alert(r.message)
-                    // location.reload();
+                    location.reload();
                 }else{
                     alert('Ocurrio un error con su pedido.')
                 }
