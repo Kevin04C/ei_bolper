@@ -7,7 +7,7 @@
             <div class="payment-method">
                 <div class="form-group">
                     <label for="">Adjuntar voucher de pago</label>
-                    <input type="file" class="form-control" name="adjunto_pago" id="id_archivo_img" required />
+                    <input type="file" class="form-control" name="adjunto_pago" id="id_archivo_img" accept="image/*" required />
                 </div>
             </div>
             <button type="submit" class="primary-btn order-submit" id="btn_submit"> Guardar pago <i class="fa fa-arrow-circle-right"></i></button> 
