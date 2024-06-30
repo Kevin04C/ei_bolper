@@ -150,6 +150,25 @@ class PedidoController extends AppController
         $this->set('top_links', $top_links);
     }
 
+    public function pedidoCancelar($id = null)
+    {
+        $pedido = $this->Pedido->find()->where(['id_pedido' => (int)$id ])->first();
+        if(!$pedido || $pedido->estado_orden == 'ENTREGADO'){
+            $msg = !$pedido ? 'El pedido no existe.' : 'El pedido ya fue entregado';
+            $this->Flash->error(__($msg));
+            return $this->redirect(['action' => 'index']);
+        }
+        $pedido->estado_orden = 'CANCELADO';
+        $pedido = $this->Pedido->save($pedido);
+        if ($pedido) {
+            // $emailCtrl = new EmailController();
+            // $emailCtrl->cancelarPedido($pedido->id_pedido);
+            // $this->Flash->success(__("El Pedido #{$pedido->id_pedido} a sido cancelado."));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Ocurrió un error intente de nuevo.'));
+    }
+
     #Funciones que se usan como API para el pedido desde la web
     public function agregarProductoPedido(){
         $resp = [

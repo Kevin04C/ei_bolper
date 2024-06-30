@@ -5,7 +5,7 @@
             <input name="opt_num_pedido" class="form-control" placeholder="# Pedido" value="<?= $opt_num_pedido ?>" /> 
         </div>
         <div class="col px-1">
-            <input name="opt_nombre" class="form-control" placeholder="Nombre usuario" value="<?= $opt_nombre ?>" /> 
+            <input name="opt_nombre" class="form-control" placeholder="Nombre   usuario" value="<?= $opt_nombre ?>" /> 
         </div>
         <div class="col px-1">
             <input name="opt_fech_ini" class="form-control" placeholder="Fecha" type="date" value="<?= $opt_fech_ini ?>" /> 
@@ -61,6 +61,8 @@
                         <span class="badge bg-info"> <?= h($ped->estado_orden) ?> </span> 
                     <?php elseif($ped->estado_orden == 'NUEVO'): ?>
                         <span class="badge bg-secondary"> <?= h($ped->estado_orden) ?> </span> 
+                    <?php elseif($ped->estado_orden == 'CANCELADO'): ?>
+                        <span class="badge bg-danger"> <?= h($ped->estado_orden) ?> </span> 
                     <?php endif; ?>
                     <br>
                     Total: $. <?= h($ped->total) ?> 
@@ -84,6 +86,7 @@
                             <li>
                                 <?php if($ped->estado_orden == 'PROCESO' || $ped->estado_orden == 'PAGADO'): ?>
                                     <!-- <a href="<?= $this->Url->build("/". $ped->ruta_adjunto) ?>" target="_blank" class="dropdown-item" > Ver Voucher </a > -->
+                                    <?= $this->Html->link(__('Cancelar Pedido'), ['action' => 'pedido-cancelar', $ped->id_pedido], ['class' => 'dropdown-item']) ?>
                                     <?= $this->Html->link(__('Entregar Pedido'), ['action' => 'pedido-entregado', $ped->id_pedido], ['class' => 'dropdown-item']) ?>
                                 <?php endif; ?>
                             </li>
