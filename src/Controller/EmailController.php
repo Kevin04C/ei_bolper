@@ -226,4 +226,31 @@ class EmailController extends AppController
             //throw $th;
         }
     }
+
+    public function envioLibroReclamacion($data){
+        try {
+            $email = new Mailer("default");
+            $email->setFrom($this->from_Email, $this->from_Name);
+            $email->viewBuilder()
+                ->setTemplate("correo_libro_reclamaciones")
+                ->setLayout("default");
+            $email
+                ->setTo($this->from_Email)
+                ->setSubject("Libro de Reclamaciones")
+                ->setEmailFormat('html')
+                ->setViewVars([
+                    'data'     =>  $data
+                ])
+                ->setAttachments([
+                    'logo.png' => [
+                        'file' => WWW_ROOT . "public/logo_blanco.png",
+                        'mimetype' => 'image/png',
+                        'contentId' => 'logo'
+                    ]
+                ])
+                ->deliver();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }

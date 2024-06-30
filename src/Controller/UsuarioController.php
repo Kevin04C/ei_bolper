@@ -595,4 +595,21 @@ class UsuarioController extends AppController
         $topProducts = $query->all();
         return $topProducts;
     }
+
+    public function libroReclamaciones(){
+       
+        $data = $this->request->getData();
+        if ($this->request->is('post')) {
+            $emailCtrl = new EmailController();
+            $response = $emailCtrl->envioLibroReclamacion($data);
+            if (true) {
+                return $this->response->withType('application/json')->withStringBody(json_encode([
+                    'success' => true, 'message' => 'Reclamo registrado', 'data' => $response
+                ]));
+            }
+        }
+        return $this->response->withType('application/json')->withStringBody(json_encode([
+            'success' => false, 'message' => 'Ocurrio un error, intente de nuevo', 'data' => null
+        ]));
+    }
 }
