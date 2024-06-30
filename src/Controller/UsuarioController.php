@@ -531,4 +531,60 @@ class UsuarioController extends AppController
         // Retornar los resultados
         return $resultados;
     }
+
+    public function obtenerInformacionGrafico() {
+        if($this->request->is(["post"])) {
+            $fechaInicio = $this->request->getData("fechaInicio");
+            $fechaFin = $this->request->getData("fechaFin");
+            $tipo = $this->request->getData("tipo");
+            $data = null;
+
+            switch ($tipo) {
+                case '1':
+                    $data = $this->productosMasVendidos($fechaInicio, $fechaFin);
+                    break;
+                case '2':
+                    $data = $this->productosMenosVendidos($fechaInicio, $fechaFin);
+                    break;
+                case '3':
+                    $data = $this->productosSinStock();
+                    break;
+                case '4':
+                    $data = $this->diasConMenosVentas($fechaInicio, $fechaFin);
+                    break;
+                case '5':
+                    $data = $this->clientesQueMasHanComprado($fechaInicio, $fechaFin);
+                    break;
+                default:
+                    break;
+            }
+
+            return $this->response->withType('application/json')->withStringBody(json_encode([
+                'success' => true,
+                'data' => $data
+            ]));
+        }
+    }
+    public function productosMasVendidos() {
+        $detallePedidoTable = $this->fetchTable('DetallePedido');
+        $query = $detallePedidoTable->find();
+        $query->select([
+            'producto_id' => 'DetallePedido.producto_id',
+            'producto_nombre' => 'DetallePedido.producto_nombre',
+            'total_vendido' => $query->func()->sum('DetallePedido.pedido_cantidad')
+        ])
+            ->join([
+                'table' => 'pedido',
+                'alias' => 'p',
+                'type' => 'INNER',
+                'conditions' => 'DetallePedido.pedido_id = p.id_pedido'
+            ])
+            ->where(['p.estado_orden IN' => ['ENTREGADO', 'PAGADO']])
+            ->group(['DetallePedido.producto_id', 'DetallePedido.producto_nombre'])
+            ->order(['total_vendido' => 'DESC'])
+            ->limit(3);
+
+        $topProducts = $query->all();
+        return $topProducts;
+    }
 }
