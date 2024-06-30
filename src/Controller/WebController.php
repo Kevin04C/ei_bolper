@@ -339,13 +339,22 @@ class WebController extends AppController
     public function editarCuenta() {
         if($this->request->is(["patch", "post", "put"])) {
             $data = $this->request->getData();
-            $usuario = $this->fetchTable('usuario')->find()->where(['id_usuario' => $this->usuario_sesion->id_usuario])->first();
-            $usuario = $this->fetchTable('usuario')->patchEntity($usuario, $data);
-            if($this->fetchTable('usuario')->save($usuario)) {
-                $this->Flash->success("Datos actualizados correctamente.");
+
+            // var_dump($data);
+            // exit();
+
+            if(!$data['telef_usuario'] || strlen($data['telef_usuario']) < 9) {
+                $this->Flash->error("Ingrese un número de teléfono válido.");
                 return $this->redirect(['controller' => 'web', 'action' => 'miCuenta']);
+            }else{
+                $usuario = $this->fetchTable('usuario')->find()->where(['id_usuario' => $this->usuario_sesion->id_usuario])->first();
+                $usuario = $this->fetchTable('usuario')->patchEntity($usuario, $data);
+                if($this->fetchTable('usuario')->save($usuario)) {
+                    $this->Flash->success("Datos actualizados correctamente.");
+                    return $this->redirect(['controller' => 'web', 'action' => 'miCuenta']);
+                }
             }
-            $this->Flash->error("Error al actualizar los datos.");
+            // $this->Flash->error("Error al actualizar los datos.");
         }
     }
 }
