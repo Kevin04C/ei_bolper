@@ -24,7 +24,7 @@ class UsuarioController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado']);
+        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado' , 'obtenerInformacionGrafico']);
     }
 
     public function index()
@@ -433,7 +433,7 @@ class UsuarioController extends AppController
         $query = $pedidoTable->find();
         $query->select([
             'usuario_id',
-            'nom_usuario' => 'Usuario.nom_usuario',
+            'nombre' => 'Usuario.nom_usuario',
             'total' => $query->func()->count('*')
         ])
             ->innerJoinWith('Usuario')
@@ -533,10 +533,11 @@ class UsuarioController extends AppController
     }
 
     public function obtenerInformacionGrafico() {
-        if($this->request->is(["post"])) {
-            $fechaInicio = $this->request->getData("fechaInicio");
-            $fechaFin = $this->request->getData("fechaFin");
-            $tipo = $this->request->getData("tipo");
+        // $this->verificarAdm();
+        if($this->request->is(["get"])) {
+            $fechaInicio = $this->request->getQuery("fechaInicio");
+            $fechaFin = $this->request->getQuery("fechaFin");
+            $tipo = $this->request->getQuery("tipo");
             $data = null;
 
             switch ($tipo) {

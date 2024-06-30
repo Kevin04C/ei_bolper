@@ -131,7 +131,22 @@
         var fechaFin       =  document.getElementById('opt_fech_fin').value;
         var grafico_select = document.getElementById('list_opciones').value;
 
-        
+        $.ajax({
+            // headers: { 'X-CSRF-Token': <?php $_csrfToken ?> },
+            url: base + "usuario/obtener-informacion-grafico",
+            data: { fechaInicio : fechaInicio, fechaFin : fechaFin, tipo : grafico_select },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (r) {
+                console.log(r)
+                
+            },error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+
+
 
 
     });
