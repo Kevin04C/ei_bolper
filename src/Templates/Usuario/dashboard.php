@@ -127,7 +127,8 @@
     });
 
     document.getElementById('boton_consultar').addEventListener('click', function() {
-        // console.log('Consultar');
+        console.log('Consultar');
+
         var fechaInicio    =  document.getElementById('opt_fech_ini').value;
         var fechaFin       =  document.getElementById('opt_fech_fin').value;
         var grafico_select = document.getElementById('list_opciones').value;

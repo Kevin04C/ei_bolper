@@ -24,7 +24,7 @@ class UsuarioController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado' , 'obtenerInformacionGrafico']);
+        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado', 'obtenerInformacionGrafico']);
     }
 
     public function index()
@@ -515,28 +515,29 @@ class UsuarioController extends AppController
 
     public function productosSinStock()
     {
-       // Obtener instancia de ProductoTable
-       $productoTable = TableRegistry::getTableLocator()->get('Producto');
+        // Obtener instancia de ProductoTable
+        $productoTable = TableRegistry::getTableLocator()->get('Producto');
 
-       // Crear la consulta para obtener los productos con stock igual a 0
-       $query = $productoTable->find();
-       $query->select([
-               'nombre' => 'nom_producto',
-               'cantidad' => 'stock'
-           ])
-           ->where(['stock' => 0])
-           ->limit(3);
+        // Crear la consulta para obtener los productos con stock igual a 0
+        $query = $productoTable->find();
+        $query->select([
+            'nombre' => 'nom_producto',
+            'cantidad' => 'stock'
+        ])
+            ->where(['stock' => 0])
+            ->limit(3);
 
-       // Ejecutar la consulta y obtener los resultados
-       $resultados = $query->toArray();
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
 
-       // Retornar los resultados
-       return $resultados;
+        // Retornar los resultados
+        return $resultados;
     }
 
-    public function obtenerInformacionGrafico() {
+    public function obtenerInformacionGrafico()
+    {
         // $this->verificarAdm();
-        if($this->request->is(["get"])) {
+        if ($this->request->is(["get"])) {
             $fechaInicio = $this->request->getQuery("fechaInicio");
             $fechaFin = $this->request->getQuery("fechaFin");
             $tipo = $this->request->getQuery("tipo");
@@ -568,32 +569,27 @@ class UsuarioController extends AppController
             ]));
         }
     }
-    public function productosMasVendidos($fechaInicio, $fechaFin) {
-        // Obtener instancia de PedidoTable
-        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
-
-        // Crear la consulta para obtener los productos menos vendidos
-        $query = $pedidoTable->find();
+    public function productosMasVendidos($fechaInicio, $fechaFin)
+    {
+        $detallePedidoTable = $this->fetchTable('DetallePedido');
+        $query = $detallePedidoTable->find();
         $query->select([
-                'producto_id' => 'Producto.id',
-                'nombre' => 'Producto.nom_producto',
-                'cantidad' => $query->func()->sum('DetallePedido.cantidad')
+            'producto_id' => 'DetallePedido.producto_id',
+            'nombre' => 'DetallePedido.producto_nombre',
+            'cantidad' => $query->func()->sum('DetallePedido.pedido_cantidad')
+        ])
+            ->join([
+                'table' => 'pedido',
+                'alias' => 'p',
+                'type' => 'INNER',
+                'conditions' => 'DetallePedido.pedido_id = p.id_pedido'
             ])
-            ->innerJoinWith('DetallePedido.Producto')
-            ->where([
-                'Pedido.estado_orden' => 'ENTREGADO',
-                function ($exp, $q) use ($fechaInicio, $fechaFin) {
-                    return $exp->between('DATE(Pedido.fecha_orden)', $fechaInicio, $fechaFin);
-                }
-            ])
-            ->group(['Producto.id', 'Producto.nom_producto'])
-            ->order(['cantidad' => 'ASC'])
+            ->where(['p.estado_orden IN' => ['ENTREGADO', 'PAGADO']])
+            ->group(['DetallePedido.producto_id', 'DetallePedido.producto_nombre'])
+            ->order(['cantidad' => 'DESC'])
             ->limit(3);
 
-        // Ejecutar la consulta y obtener los resultados
-        $resultados = $query->toArray();
-
-        // Retornar los resultados
-        return $resultados;
+        $topProducts = $query->all();
+        return $topProducts;
     }
 }
