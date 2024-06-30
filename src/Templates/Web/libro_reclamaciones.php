@@ -102,9 +102,9 @@
             cache: false,
             contentType: false,
             success: function (r) {
-                console.log(r)
                 if (r.success) {
-                    // window.location.replace( base + "web/pedido-confirmado/" + pedido_id )
+                    alert(r.mensaje)
+                    location.reload();
                 }else{
                     alert('Ocurrio un error con su pedido.')
                 }
