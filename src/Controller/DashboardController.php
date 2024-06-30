@@ -21,6 +21,8 @@ class DashboardController extends AppController
     public function index()
     {
         $detallePedidoTable = TableRegistry::getTableLocator()->get('DetallePedido');
+        
+
         $query = $detallePedidoTable->find();
         $query->select([
             'producto_id',
@@ -35,7 +37,7 @@ class DashboardController extends AppController
             ->limit(3);
 
         $productosMasVendidos = $query->toArray();
-
+        $clientesQueMasHanComprado = $this->clientesQueMasHanComprado();  
         // debug($productosMasVendidos);
 
         $this->set(compact('productosMasVendidos'));
@@ -119,5 +121,29 @@ class DashboardController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+
+    public function clientesQueMasHanComprado() {
+        // Obtener instancias de los modelos necesarios
+        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+        $usuarioTable = TableRegistry::getTableLocator()->get('Usuario');
+
+        // Crear la consulta personalizada
+        $query = $pedidoTable->find();
+        $query->select([
+                'usuario_id',
+                'nom_usuario' => 'Usuario.nom_usuario',
+                'total' => $query->func()->count('*')
+            ])
+            ->innerJoinWith('Usuario')
+            ->where(['Usuario.tipo' => 'CLIENTE'])
+            ->group(['usuario_id', 'Usuario.nom_usuario'])
+            ->order(['total' => 'DESC'])
+            ->limit(3);
+
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+        return $resultados;
     }
 }
