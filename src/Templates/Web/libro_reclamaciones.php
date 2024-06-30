@@ -113,8 +113,7 @@
                 alert(thrownError);
             }, complete: function () {
                 $("#btn_submit").attr('disabled', false)
-                $("#btn_submit").css('background-color', '#D10024')
-                $("#btn_submit").html(`Guardar Pago <i class="fa fa-arrow-circle-right"></i>`)
+                $("#btn_submit").html(`<button> <i class="fa fa-upload"></i> Enviar</button>`)
             }, 
          });
 
