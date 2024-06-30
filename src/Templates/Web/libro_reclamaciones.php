@@ -94,7 +94,7 @@
 
             $.ajax({
             headers: { 'X-CSRF-Token': csrfToken },
-            url: base + "pedido/pagar-pedido-final",
+            url: base + "usuario/libro-reclamaciones",
             data: formData,
             type: 'POST',
             dataType: 'JSON',
