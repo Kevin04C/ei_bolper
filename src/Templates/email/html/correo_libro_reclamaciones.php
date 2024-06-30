@@ -6,7 +6,7 @@
         
         La persona  <?=$data['nombre']?>, con dni <?=$data['dni']?> envio un mensaje a través del formulario de libro de reclamaciones de la página web.
     </p>
-        <?=$data->['descripcion']?>
+        <?=$data['descripcion']?>
     </p>
 
 </div>
