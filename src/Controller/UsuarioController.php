@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 
 /**
@@ -14,14 +15,14 @@ use Cake\Routing\Router;
  */
 class UsuarioController extends AppController
 {
-    public function initialize(): void  
+    public function initialize(): void
     {
         parent::initialize();
     }
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb' , 'isLogueado']);
+        $this->Authentication->allowUnauthenticated(['login', 'loginWeb', 'logout', 'registroClienteWeb', 'isLogueado']);
     }
 
     public function index()
@@ -266,15 +267,19 @@ class UsuarioController extends AppController
             ->where(['Pedido.estado_orden IN' => ['ENTREGADO', 'PAGADO']]);
 
         $totalVentas = $totalVentasQuery->first()->total_ventas;
+        $clientesQueMasHanComprado = $this->clientesQueMasHanComprado("2024-06-23", "2024-06-23");
+        $productosMenosVendidos = $this->productosMenosVendidos("2024-06-23", "2024-06-23");
+        $diasConMenosVentas = $this->diasConMenosVentas("2024-06-23", "2024-06-23");
+        $productosSinStock = $this->productosSinStock();
 
         $this->set('view_title', 'Inicio');
         $this->set('topProducts', $topProducts);
         $this->set('totalVentas', $totalVentas);
+        $this->set('clientesQueMasHanComprado', $clientesQueMasHanComprado);
+        $this->set('productosMenosVendidos', $productosMenosVendidos);
+        $this->set('diasConMenosVentas', $diasConMenosVentas);
+        $this->set('productosSinStock', $productosSinStock);
     }
-
-
-
-
 
 
     public function registrarUsuarioPedido($data = [])
@@ -371,7 +376,7 @@ class UsuarioController extends AppController
                     'success' => false, 'message' => 'El correo no es valido', 'data' => null
                 ]));
             }
-       
+
 
             if ((($data['correo'] ?? '') == '') || $this->Usuario->find()->where(['correo_usuario' => $data['correo']])->first()) {
                 return $this->response->withType('application/json')->withStringBody(json_encode([
@@ -390,7 +395,7 @@ class UsuarioController extends AppController
             $usuario_ = $this->Usuario->save($usuario);
 
             if ($this->Usuario->save($usuario)) {
-            // if ($usuario_) {
+                // if ($usuario_) {
                 $emailCtrl = new EmailController();
                 $response = $emailCtrl->enviarClienteNuevo($usuario_, $data['contrasena']);
                 return $this->response->withType('application/json')->withStringBody(json_encode([
@@ -403,15 +408,124 @@ class UsuarioController extends AppController
         ]));
     }
 
-    public function isLogueado(){
+    public function isLogueado()
+    {
         // escuchar si es get 
         // var_dump($this->request);
         // exit();
         $isLogueado = $this->usuario_sesion ? true : false;
-        if($this->request->is('get')){
+        if ($this->request->is('get')) {
             return $this->response->withType('application/json')->withStringBody(json_encode([
                 'success' => true, 'message' => 'devolviendo session', 'data' => $isLogueado
             ]));
         };
+    }
+
+    public function clientesQueMasHanComprado($fechaInicio, $fechaFin)
+    {
+        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+        $usuarioTable = TableRegistry::getTableLocator()->get('Usuario');
+
+        // Crear la consulta personalizada
+        $query = $pedidoTable->find();
+        $query->select([
+            'usuario_id',
+            'nom_usuario' => 'Usuario.nom_usuario',
+            'total' => $query->func()->count('*')
+        ])
+            ->innerJoinWith('Usuario')
+            ->where([
+                'Usuario.tipo' => 'CLIENTE',
+                function ($exp, $q) use ($fechaInicio, $fechaFin) {
+                    return $exp->between('DATE(fecha_orden)', $fechaInicio, $fechaFin);
+                }
+            ])
+            ->group(['usuario_id', 'Usuario.nom_usuario'])
+            ->order(['total' => 'DESC'])
+            ->limit(3);
+
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+
+        // Retornar los resultados
+        return $resultados;
+    }
+
+    public function diasConMenosVentas($fechaInicio, $fechaFin)
+    {
+        // Obtener instancia de PedidoTable
+        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+
+        // Crear la consulta para obtener los días con menos ventas
+        $query = $pedidoTable->find();
+        $query->select([
+            'fecha' => $query->func()->date(['fecha_orden' => 'literal']),
+            'cantidad' => $query->func()->count('*')
+        ])
+            ->where([
+                'estado_orden' => 'ENTREGADO',
+                function ($exp, $q) use ($fechaInicio, $fechaFin) {
+                    return $exp->between('DATE(fecha_orden)', $fechaInicio, $fechaFin);
+                }
+            ])
+            ->group(['fecha'])
+            ->order(['cantidad' => 'ASC'])
+            ->limit(3);
+
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+
+        // Retornar los resultados
+        return $resultados;
+    }
+
+    public function productosMenosVendidos($fechaInicio, $fechaFin)
+    {
+        // Obtener instancia de PedidoTable y ProductoTable
+        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+        $productoTable = TableRegistry::getTableLocator()->get('Producto');
+
+        // Crear la consulta para obtener los productos más vendidos
+        $query = $pedidoTable->find();
+        $query->select([
+            'producto_id' => 'Producto.id',
+            'nom_producto' => 'Producto.nom_producto',
+            'total' => $query->func()->sum('Pedido.cantidad')
+        ])
+            ->innerJoinWith('DetallePedido.Producto')
+            ->where([
+                'pedido.estado_orden' => 'ENTREGADO',
+                function ($exp, $q) use ($fechaInicio, $fechaFin) {
+                    return $exp->between('DATE(pedido.fecha_orden)', $fechaInicio, $fechaFin);
+                }
+            ])
+            ->group(['Producto.id', 'Producto.nom_producto'])
+            ->order(['total' => 'ASC'])
+            ->limit(3);
+
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+
+        // Retornar los resultados
+        return $resultados;
+    }
+
+    public function productosSinStock()
+    {
+        // Obtener instancia de ProductoTable
+        $productoTable = TableRegistry::getTableLocator()->get('Producto');
+
+        // Crear la consulta para obtener los productos con stock igual a 0
+        $query = $productoTable->find();
+        $query->where([
+            'stock' => 0
+        ])
+            ->limit(3);
+
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+
+        // Retornar los resultados
+        return $resultados;
     }
 }
