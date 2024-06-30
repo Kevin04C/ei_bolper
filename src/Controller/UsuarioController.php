@@ -268,10 +268,13 @@ class UsuarioController extends AppController
         ])
             ->where(['Pedido.estado_orden IN' => ['ENTREGADO', 'PAGADO']]);
 
+        $primer_dia_mes = date('Y-m-01');
+        $dia_actual_mes = date("Y-m-d");
+
         $totalVentas = $totalVentasQuery->first()->total_ventas;
-        $clientesQueMasHanComprado = $this->clientesQueMasHanComprado("2024-06-23", "2024-06-23");
-        $productosMenosVendidos = $this->productosMenosVendidos("2024-06-23", "2024-06-23");
-        $diasConMenosVentas = $this->diasConMenosVentas("2024-06-23", "2024-06-23");
+        $clientesQueMasHanComprado = $this->clientesQueMasHanComprado($primer_dia_mes, $dia_actual_mes);
+        $productosMenosVendidos = $this->productosMenosVendidos($primer_dia_mes, $dia_actual_mes);
+        $diasConMenosVentas = $this->diasConMenosVentas($primer_dia_mes, $dia_actual_mes);
         $productosSinStock = $this->productosSinStock();
 
         $this->set('view_title', 'Inicio');
