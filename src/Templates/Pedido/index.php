@@ -5,7 +5,7 @@
             <input name="opt_num_pedido" class="form-control" placeholder="# Pedido" value="<?= $opt_num_pedido ?>" /> 
         </div>
         <div class="col px-1">
-            <input name="opt_nombre" class="form-control" placeholder="Nombre   usuario" value="<?= $opt_nombre ?>" /> 
+            <input name="opt_nombre" class="form-control" placeholder="Nombre usuario" value="<?= $opt_nombre ?>" /> 
         </div>
         <div class="col px-1">
             <input name="opt_fech_ini" class="form-control" placeholder="Fecha" type="date" value="<?= $opt_fech_ini ?>" /> 

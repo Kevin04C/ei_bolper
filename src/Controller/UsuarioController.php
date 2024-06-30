@@ -15,6 +15,8 @@ use Cake\Routing\Router;
  */
 class UsuarioController extends AppController
 {
+
+
     public function initialize(): void
     {
         parent::initialize();
@@ -280,6 +282,7 @@ class UsuarioController extends AppController
         $this->set('diasConMenosVentas', $diasConMenosVentas);
         $this->set('productosSinStock', $productosSinStock);
     }
+
 
 
     public function registrarUsuarioPedido($data = [])
