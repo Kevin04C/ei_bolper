@@ -568,26 +568,32 @@ class UsuarioController extends AppController
             ]));
         }
     }
-    public function productosMasVendidos() {
-        $detallePedidoTable = $this->fetchTable('DetallePedido');
-        $query = $detallePedidoTable->find();
+    public function productosMasVendidos($fechaInicio, $fechaFin) {
+        // Obtener instancia de PedidoTable
+        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+
+        // Crear la consulta para obtener los productos menos vendidos
+        $query = $pedidoTable->find();
         $query->select([
-            'producto_id' => 'DetallePedido.producto_id',
-            'nombre' => 'DetallePedido.producto_nombre',
-            'cantidad' => $query->func()->sum('DetallePedido.pedido_cantidad')
-        ])
-            ->join([
-                'table' => 'pedido',
-                'alias' => 'p',
-                'type' => 'INNER',
-                'conditions' => 'DetallePedido.pedido_id = p.id_pedido'
+                'producto_id' => 'Producto.id',
+                'nombre' => 'Producto.nom_producto',
+                'cantidad' => $query->func()->sum('DetallePedido.cantidad')
             ])
-            ->where(['p.estado_orden IN' => ['ENTREGADO', 'PAGADO']])
-            ->group(['DetallePedido.producto_id', 'DetallePedido.producto_nombre'])
-            ->order(['total_vendido' => 'DESC'])
+            ->innerJoinWith('DetallePedido.Producto')
+            ->where([
+                'Pedido.estado_orden' => 'ENTREGADO',
+                function ($exp, $q) use ($fechaInicio, $fechaFin) {
+                    return $exp->between('DATE(Pedido.fecha_orden)', $fechaInicio, $fechaFin);
+                }
+            ])
+            ->group(['Producto.id', 'Producto.nom_producto'])
+            ->order(['cantidad' => 'ASC'])
             ->limit(3);
 
-        $topProducts = $query->all();
-        return $topProducts;
+        // Ejecutar la consulta y obtener los resultados
+        $resultados = $query->toArray();
+
+        // Retornar los resultados
+        return $resultados;
     }
 }
