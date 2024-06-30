@@ -471,7 +471,7 @@ class UsuarioController extends AppController
                     return $exp->between('DATE(fecha_orden)', $fechaInicio, $fechaFin);
                 }
             ])
-            ->group(['fecha'])
+            ->group(['fecha_orden'])
             ->order(['cantidad' => 'ASC'])
             ->limit(3);
 

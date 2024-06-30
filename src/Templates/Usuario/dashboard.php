@@ -68,6 +68,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    var productosMasVendidosChart = null;
     
     document.addEventListener("DOMContentLoaded", function() {
 
@@ -75,7 +76,7 @@
 
         var topproducto = <?= json_encode($totalVentas) ?>;
         var ctx = document.getElementById('productosMasVendidosChart').getContext('2d');
-        var productosMasVendidosChart = new Chart(ctx, {
+        productosMasVendidosChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: [
@@ -149,28 +150,31 @@
                 };
 
                 for (var i = 0; i < list.length; i++) {
-                    data.push(list[i].total);
+                    data.push(list[i].cantidad);
                 };
 
-                if(r.tipo == 1){
+                if(grafico_select == 1){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MÁS VENDIDOS';
                     label = 'Total Vendido';
-                }else if(r.tipo == 2){
+                }else if(grafico_select == 2){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MENOS VENDIDOS';
                     label = 'Total Vendido';
-                }else if(r.tipo == 3){
+                }else if(grafico_select == 3){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS CON 0 STOCK';
                     label = 'Stock';
-                }else if(r.tipo == 4){
+                }else if(grafico_select == 4){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS DÍAS CON MENOS VENTAS';
                     label = 'Total Vendido';
-                }else if(r.tipo == 5){
+                }else if(grafico_select == 5){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS CLIENTES CON MÁS COMPRAS';
                     label = 'Total Comprado';
                 }
+                
 
+                // destriyo el anterior
+                productosMasVendidosChart.destroy();
                 var ctx = document.getElementById('productosMasVendidosChart').getContext('2d');
-                var productosMasVendidosChart = new Chart(ctx, {
+                productosMasVendidosChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: labels,
