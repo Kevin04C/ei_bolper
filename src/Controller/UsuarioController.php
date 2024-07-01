@@ -462,30 +462,22 @@ class UsuarioController extends AppController
 
     public function diasConMenosVentas($fechaInicio, $fechaFin)
     {
-        // Obtener instancia de PedidoTable
-        $pedidoTable = TableRegistry::getTableLocator()->get('Pedido');
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT DATE(fecha_orden) AS nombre, COUNT(*) AS cantidad
+            FROM pedido
+            WHERE estado_orden = 'ENTREGADO' AND DATE(fecha_orden) BETWEEN :fechaInicio AND :fechaFin
+            GROUP BY DATE(fecha_orden)
+            ORDER BY cantidad ASC
+            LIMIT 0, 3";
+            
+        $params = [
+            'fechaInicio' => $fechaInicio,
+            'fechaFin' => $fechaFin
+        ];
 
-        // Crear la consulta para obtener los días con menos ventas
-        $query = $pedidoTable->find();
-        $query->select([
-            'nombre' => $query->func()->date(['fecha_orden' => 'literal']),
-            'cantidad' => $query->func()->count('*')
-        ])
-            ->where([
-                'estado_orden' => 'ENTREGADO',
-                function ($exp, $q) use ($fechaInicio, $fechaFin) {
-                    return $exp->between('DATE(fecha_orden)', $fechaInicio, $fechaFin);
-                }
-            ])
-            ->group(['fecha_orden'])
-            ->order(['cantidad' => 'ASC'])
-            ->limit(3);
-
-        // Ejecutar la consulta y obtener los resultados
-        $resultados = $query->toArray();
-
-        // Retornar los resultados
+        $resultados = $connection->execute($sql, $params)->fetchAll("assoc");
         return $resultados;
+        
     }
 
     public function productosMenosVendidos($fechaInicio, $fechaFin)
@@ -528,9 +520,9 @@ class UsuarioController extends AppController
         $query = $productoTable->find();
         $query->select([
             'nombre' => 'nom_producto',
-            'cantidad' => 'stock'
+            'cantidad' => 'cantidad'
         ])
-            ->where(['stock' => 0])
+            ->where(['cantidad' => 0])
             ->limit(3);
 
         // Ejecutar la consulta y obtener los resultados
