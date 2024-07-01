@@ -18,7 +18,7 @@
                     <select name="tipo_doc" id="" class="form-control">
                         <option value="">-Ninguno-</option>
                         <option value="dni">DNI</option>
-                        <option value="ruc">RUC</option>
+                        <!-- <option value="ruc">RUC</option> -->
                     </select>
                 </div>
             </div>

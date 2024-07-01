@@ -144,11 +144,11 @@ function confirmarPedido(e) {
     var formData = new FormData(formElement);
     formData.append('id_pedido', Carrito.pedido.id_pedido );
     var redireccion = '';
-    if($("[name=metodo_entrega]").val() == 'DELIVERY'){
-        redireccion = "pedido-confirmado";
-    }else {
+    // if($("[name=metodo_entrega]").val() == 'DELIVERY'){
+    //     redireccion = "pedido-confirmado";
+    // }else {
         redireccion = "pagar-pedido";
-    }
+    // }
     
     $.ajax({
         headers: { 'X-CSRF-Token': csrfToken },
@@ -173,6 +173,7 @@ function confirmarPedido(e) {
                 //     $("#form_sesion_web [name=contrasena]").val($("#input_contrasena").val());
                 //     $("#form_sesion_web").submit();
                 // }else{
+                    console.log(base_root + redireccion + "/" + r.data)
                     window.location.replace( base_root + redireccion + "/" + r.data )
                 // }
             }else{

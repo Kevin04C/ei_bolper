@@ -44,6 +44,7 @@
                     <option value="3" selected>-Productos con 0 stock-</option>
                     <option value="4" selected>-Días con menos ventas-</option>
                     <option value="5" selected>-Clientes con más compras-</option>
+                    <option value="6" selected>-Todas las ventas por rango-</option>
                 </select>
             </div>
 
@@ -58,10 +59,14 @@
     
     </div>
     <br>
-    <div class="row">
+    <div class="row" >
         <div class="col-md-12">
             <h2 id="text_grafico">GRÁFICO DE LOS PRODUCTOS MÁS VENDIDOS</h2>
-            <canvas id="productosMasVendidosChart" height="100"></canvas>
+            <div id="graficoo">
+                <canvas id="productosMasVendidosChart" height="100"></canvas>
+            </div>
+           
+            <h2 id="ventas" style="display: none;"></h2>
         </div>
     </div>
 </div>
@@ -145,6 +150,7 @@
                 var labels = [];
                 var data = [];
                 var label = "";
+                var construir = false;
                 
                 for (var i = 0; i < list.length; i++) {
                     labels.push(list[i].nombre);
@@ -154,26 +160,47 @@
                     data.push(list[i].cantidad);
                 };
 
+                document.getElementById('ventas').style.display = 'none';
+                document.getElementById('graficoo').style.display = 'flex';
+
                 if(grafico_select == 1){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MÁS VENDIDOS';
                     label = 'Total Vendido';
+                    construir = true;   
                 }else if(grafico_select == 2){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS MENOS VENDIDOS';
                     label = 'Total Vendido';
+                    construir = true;   
                 }else if(grafico_select == 3){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS PRODUCTOS CON 0 STOCK';
                     label = 'Stock';
+                    construir = true;   
                 }else if(grafico_select == 4){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS DÍAS CON MENOS VENTAS';
                     label = 'Total Vendido';
+                    construir = true;   
                 }else if(grafico_select == 5){
                     document.getElementById('text_grafico').innerHTML = 'GRÁFICO DE LOS CLIENTES CON MÁS COMPRAS';
                     label = 'Total Comprado';
+                    construir = true;   
+                }else if(grafico_select == 6){
+                    document.getElementById('text_grafico').innerHTML = 'LAS VENTAS POR RANGO';
+                    label = 'Total Vendido';
+                    // ocultamos el grafico porque sera solo un html 
+                    document.getElementById('graficoo').style.display = 'none';
+                    // mostramos el total de ventas 
+                    document.getElementById('ventas').style.display = 'flex';
+                    document.getElementById('ventas').innerHTML = 'Total de ventas: S/.' + list;
+                    construir = true;   
+
                 }
                 
 
                 // destriyo el anterior
                 productosMasVendidosChart.destroy();
+                if(!construir){
+                    return;
+                }
                 var ctx = document.getElementById('productosMasVendidosChart').getContext('2d');
                 productosMasVendidosChart = new Chart(ctx, {
                     type: 'bar',

@@ -345,12 +345,12 @@ class PedidoController extends AppController
             $pedido->ruta_pago_adjunto = '';
             $pedido->metodo_pago = ($data['metodo_pago'] ?? '');
             $pedido->metodo_entrega = $data['metodo_entrega'] ?? 'LOCAL';
-            if( $pedido->metodo_entrega == 'DELIVERY'){
-                // Proceso es para marcar que el pedido espera su total confirmacion.
-                $pedido->estado_orden = 'PROCESO';
-            }else{
+            // if( $pedido->metodo_entrega == 'DELIVERY'){
+            //     // Proceso es para marcar que el pedido espera su total confirmacion.
+            //     $pedido->estado_orden = 'PROCESO';
+            // }else{
                 $pedido->estado_orden = 'NUEVO';
-            }
+            // }
 
             $pedido = $this->Pedido->save($pedido);
             // $this->eliminarPedidosNuevosUsuario($usuario->id_usuario);

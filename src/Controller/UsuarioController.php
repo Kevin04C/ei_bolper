@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Datasource\ConnectionManager;
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 
@@ -261,12 +262,14 @@ class UsuarioController extends AppController
 
         $topProducts = $query->all();
 
+        
+
         $pedidoTable = $this->fetchTable('Pedido');
         $totalVentasQuery = $pedidoTable->find();
         $totalVentasQuery->select([
             'total_ventas' => $totalVentasQuery->func()->sum('Pedido.total')
         ])
-            ->where(['Pedido.estado_orden IN' => ['ENTREGADO', 'PAGADO']]);
+        ->where(['Pedido.estado_orden IN' => ['ENTREGADO', 'PAGADO']]);
 
         $primer_dia_mes = date('Y-m-01');
         $dia_actual_mes = date("Y-m-d");
@@ -562,13 +565,16 @@ class UsuarioController extends AppController
                 case '5':
                     $data = $this->clientesQueMasHanComprado($fechaInicio, $fechaFin);
                     break;
+                case '6':
+                    $data = $this->ventasTotalesByFecha($fechaInicio, $fechaFin);
+                    break;
                 default:
                     break;
             }
 
             return $this->response->withType('application/json')->withStringBody(json_encode([
                 'success' => true,
-                'data' => $data
+                'data' => $data,
             ]));
         }
     }
@@ -594,6 +600,20 @@ class UsuarioController extends AppController
 
         $topProducts = $query->all();
         return $topProducts;
+    }
+
+    public function ventasTotalesByFecha($fechaInicio, $fechaFin){
+
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT  COALESCE(SUM(total),0) AS total_ventas
+            FROM pedido
+            WHERE estado_orden = 'ENTREGADO' && estado_orden = 'PAGADO' AND DATE(fecha_orden) BETWEEN '$fechaInicio' AND '$fechaFin';";
+        $params = [
+
+        ];
+
+        $resultados = $connection->execute($sql, $params)->fetchAll("assoc");
+        return $resultados[0]['total_ventas'];
     }
 
     public function libroReclamaciones(){
