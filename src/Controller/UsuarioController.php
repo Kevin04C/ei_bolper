@@ -599,7 +599,7 @@ class UsuarioController extends AppController
         $connection = ConnectionManager::get('default');
         $sql = "SELECT  COALESCE(SUM(total),0) AS total_ventas
             FROM pedido
-            WHERE estado_orden = 'ENTREGADO' && estado_orden = 'PAGADO' AND DATE(fecha_orden) BETWEEN '$fechaInicio' AND '$fechaFin';";
+            WHERE (estado_orden = 'ENTREGADO' OR estado_orden = 'PAGADO') AND DATE(fecha_orden) BETWEEN '$fechaInicio' AND '$fechaFin';";
         $params = [
 
         ];

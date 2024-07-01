@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="">
+    <div class="header">
         <!-- <div class="col-md-6">
             <h2>Tabla de los 3 productos vendidos</h2>
             <table class="table table-striped">
@@ -26,7 +26,7 @@
             <buttona id="imprimir_button" class="btn btn-secondary btn-sm">Imprimir Grafico</button>
         </div>
 
-        <div class="row mb-3">
+        <div class="row mb-3 ">
 
             <div class="col px-1">
                 Fecha Inicio
@@ -59,7 +59,7 @@
     
     </div>
     <br>
-    <div class="row" >
+    <div class="row contenedor-grafico" >
         <div class="col-md-12">
             <h2 id="text_grafico">GRÁFICO DE LOS PRODUCTOS MÁS VENDIDOS</h2>
             <div id="graficoo">
@@ -262,3 +262,26 @@
 
 
 </script>
+
+<style>
+
+@media print {
+    #sidebar-wrapper {
+        display: none;
+    }
+    .navbar  {
+        display: none;
+    }
+    .header {
+        display: none;
+    } 
+    .contenedor-grafico{
+        width: 80%;
+    }
+    #productosMasVendidosChart {
+        width: 700px !important;
+        aspect-ratio: 16/9 !important;
+    }
+}
+
+</style>
