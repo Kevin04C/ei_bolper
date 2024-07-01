@@ -28,6 +28,7 @@ $( document ).ready(function() {
     $("[name=metodo_entrega]").on('change', function(){
         if($(this).val() == 'DELIVERY'){
             $("#notas_adicionales").css('display', 'flex');
+            $("[name=metodo_pago]").attr('required', true);
             // $("[name=metodo_pago]").attr('required', false);
             // $("#img_pagar").css('display', 'none');
             // $("#img_yape").css('display', 'none');
