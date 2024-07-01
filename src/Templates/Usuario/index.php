@@ -33,7 +33,7 @@
                         </a>
                         <ul class="dropdown-menu"  style="min-width: 130px" >
                             <li>
-                                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $us->id_usuario], ['class' => 'dropdown-item']) ?>
+                                <?= $this->Html->link(__('Editar'), ["controller" => "usuario", 'action' => 'edit', $us->id_usuario], ['class' => 'dropdown-item']) ?>
                             </li>
                             <li>
                                 <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $us->id_usuario], ['confirm' => __('Are you sure you want to delete # {0}?', $us->id_usuario) , 'class' => 'dropdown-item']) ?>
