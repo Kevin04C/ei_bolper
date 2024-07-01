@@ -4,7 +4,8 @@
         <div class="message-info" onclick="this.classList.add('hidden');">
         <?php 
             if($pedido && $pedido->metodo_entrega =='DELIVERY'){
-                echo "Pedido confirmado, se le llamará al celular que proporciono para el pago correspondiente al envío.";
+                // echo "Pedido confirmado, se le llamará al celular que proporciono para el pago correspondiente al envío.";
+                echo "Pedido confirmado, se le llamará al celular gestionar el envío.";
             }else{
                 echo "Pedido confirmado, le escribiremos a su correo.";
             }
