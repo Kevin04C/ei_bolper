@@ -178,7 +178,7 @@ class WebController extends AppController
         $pedido = $this->fetchTable('Pedido')->find()
             ->where([
                 'id_pedido' => (int) $id_pedido,
-                'OR' => [['estado_orden' => 'PAGADO', 'metodo_entrega' => 'LOCAL'], ['estado_orden' => 'PROCESO', 'metodo_entrega' => 'DELIVERY']]
+                // 'OR' => [['estado_orden' => 'PAGADO', 'metodo_entrega' => 'LOCAL'], ['estado_orden' => 'PROCESO', 'metodo_entrega' => 'DELIVERY']]
             ])->first();
         if (!$pedido) {
             return $this->redirect(['action' => 'pedidoError']);
