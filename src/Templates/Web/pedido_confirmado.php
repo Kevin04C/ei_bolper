@@ -5,7 +5,7 @@
         <?php 
             if($pedido && $pedido->metodo_entrega =='DELIVERY'){
                 // echo "Pedido confirmado, se le llamará al celular que proporciono para el pago correspondiente al envío.";
-                echo "Pedido confirmado, se le llamará al celular gestionar el envío.";
+                echo "Pedido confirmado, se le llamará al celular para gestionar el envío.";
             }else{
                 echo "Pedido confirmado, le escribiremos a su correo.";
             }
